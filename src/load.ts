@@ -268,7 +268,7 @@ export function getLoad(
 
 function isNode(obj: any): obj is AnyNode {
   return (
-    !!obj.name ||
+    (obj.hasOwnProperty('name') && obj.name) ||
     obj.type === 'root' ||
     obj.type === 'text' ||
     obj.type === 'comment'
